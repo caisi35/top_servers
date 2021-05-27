@@ -20,7 +20,8 @@ def upload(requests):
         if grade < 1 or grade > 10000000:
             raise ValueError
     except Exception:
-        return HttpResponse(json.dumps({"status": 0, "data": {}}), content_type='application/json')
+        return HttpResponse(json.dumps({"status": 0, "data": {}}),
+                            content_type='application/json')
     DATA[client_id] = grade
 
     result = {
